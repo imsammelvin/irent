@@ -15,7 +15,6 @@ app.use('/js',express.static(__dirname + 'public/js'))
 app.use('/img',express.static(__dirname + 'public/img'))
 
 mongoose.connect("mongodb+srv://irentdb:irentdb@cluster0.wyymy.mongodb.net/irentDB", {useNewUrlParser: true});
-//mongoose.connect("mongodb://localhost:27017/irentDB", {useNewUrlParser: true});
 
 const postSchema = {
   name: String,
@@ -78,26 +77,6 @@ app.post("/addhome", function(req, res, next){
 
 });
 
-/*
-app.get("/posts/:userName", function(req, res){
-  const requestedTitle = _.lowerCase(req.params.userName);
-
-  posts.forEach(function(post){
-    const storedTitle = _.lowerCase(post.name);
-
-    if (storedTitle === requestedTitle) {
-      res.render("post", {
-        name: post.name,
-        email: post.email,
-        phone: post.phone,
-        house: post.house,
-        location: post.location
-      });
-    }
-  });
-
-});
-*/
 
 app.get("/posts/:postId", function(req, res){
 
@@ -116,8 +95,11 @@ app.get("/posts/:postId", function(req, res){
   });
 
 
+  let port = process.env.PORT;
+  if (port == null || port == "") {
+    port = 3000;
+  }
 
-
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
+app.listen(port, function() {
+  console.log("Server started successfully");
 });
