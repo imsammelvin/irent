@@ -1,0 +1,64 @@
+<%- include("header"); -%>
+
+<div class="renthome"> 
+
+  <nav class="home-nav">
+    <a href="/"><h3>iRent</h3></a> 
+  </nav>
+
+  <div class="tittle-rent">
+    <h2>Search for location</h2>
+  </div>
+
+  <form class="loca-form" action="/renthome" method="post">
+
+    <div class="rent-top">
+
+    
+      <div class="rent-location">
+
+        <select name="selectLocation">
+          <option value="Gobichettipalayam" name="selectLocation">Gobichettipalayam</option>
+          <option value="DG Pudur" name="selectLocation">DG Pudur</option>
+          <option value="Peria Kodivery" name="selectLocation">Peria Kodivery</option>
+          <option value="Sathyamangalam" name="selectLocation">Sathyamangalam</option>
+        </select>
+
+      </div>  
+
+        <div>
+          <button class="button-17 button-search">
+            Search
+          </button>
+        </div>
+
+      </div>    
+
+      
+
+  </form>
+
+
+    <%  posts.forEach(function(post){ %>
+
+      <div class="card" style="width: 18rem;">
+
+        <div class="img-card">
+          <img class="img" src="/img/house6.jpg" style="height: 180px; width: 17.7rem;">
+        </div>      
+
+        <h6>Name: <%=post.name%></h6>
+        <h6>House Type: <%=post.house%></h6>
+        <h6>Location: <%=post.location%></h6>  
+        <button class="button-17"><a href="/posts/<%=post.id%>">Vist</a></button>
+      
+
+    </div>
+  
+  
+      <% }) %>
+
+
+</div>
+
+<%- include("footer"); -%>

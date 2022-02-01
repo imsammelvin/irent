@@ -1,0 +1,65 @@
+<%- include("header"); -%>
+
+<nav class="home-nav">
+  <a href="/"><h3>iRent</h3></a> 
+</nav>
+
+<form class="add-form" action="/addhome" method="post">
+  <div class="form-body">
+    <div class="subtitle">Add information about the house</div>
+    <div class="form-name">
+      <label>Name</label> <br>
+      <input type="text" name="userName" class="input" required>
+    </div>
+    <div class="form-email">
+      <label>Email</label> <br>
+      <input type="email" name="userEmail" class="input" required>
+    </div>
+    <div class="form-phone">
+      <label>Phone number</label> <br>
+      <input type="tel" name="userPhone" class="input" required>
+    </div>
+    <div class="form-house">
+        <label>House Type</label> <br>
+        <label>
+            <input type="radio" value="HK" name="houseType" >
+            HK
+        </label>
+        <label>
+          <input type="radio" value="1BHK" name="houseType" required>
+          1BHK
+        </label> <br>
+        <label>
+          <input type="radio" value="2BHK" name="houseType" >
+          2BHK
+        </label>
+        <label>
+          <input type="radio" value="3BHK" name="houseType" >
+          3BHK
+        </label>
+      </div>
+    <div class="form-location">
+      <label>Location</label> <br>
+      <select name="userLocation" required>
+        <option value="Gobichettipalayam" name="userLocation">Gobichettipalayam</option>
+        <option value="DG Pudur" name="userLocation">DG Pudur</option>
+        <option value="Peria Kodivery" name="userLocation">Peria Kodivery</option>
+        <option value="Sathyamangalam" name="userLocation">Sathyamangalam</option>
+      </select>
+    </div>
+
+      <div class="nav-button">
+        <button class="button-17">
+          <a href="/">Back</a>
+        </button>
+        <button class="button-17">
+          Register
+        </button>
+      </div>
+  </div>
+    
+
+  </form>
+
+
+  <%- include("footer"); -%>
